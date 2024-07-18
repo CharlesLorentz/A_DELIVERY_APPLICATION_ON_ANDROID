@@ -8,17 +8,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
 
-
+    private static final String CREATE_USER_TABLE="create table user(id integer primary key autoincrement,Gnum text,Gpassword text,Gname text,Ggender text,Gphone text,Gaddress text)";
 //    public SQLiteHelper( Context context,  String name,  SQLiteDatabase.CursorFactory factory, int version) {
 //        super(context, name, factory, version);
 //    }
     public SQLiteHelper( Context context) {
-        super(context, "login.db", null, 1);
+        super(context, "user.db", null, 1);
     }
 
-    public void onCreate(SQLiteDatabase db){
-        String sql="create table Guest(Gnum primary key,Gpassword,Game,Ggender,Gphone,Gaddress)";
-        db.execSQL(sql);
+    public void onCreate(SQLiteDatabase sqLiteDatabase){
+       sqLiteDatabase.execSQL(CREATE_USER_TABLE);
     }
 
     @Override
