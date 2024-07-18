@@ -15,13 +15,8 @@ import android.widget.Toast;
  * */
 //public class UserDao extends BaseDao {
  public class UserDao {
-    String Gnum;
-    String Gpassword;
-    String Gname;
-    String Ggender;
-    String Gphone;
-    String Gaddress;
-    private SQLiteDatabase db;
+
+    private SQLiteDatabase sqLiteDatabase;
     //SQLiteDatabase对象封装了所有SQLite的增删改查语句的操作方法，让开发者直接调用就行
 
     public UserDao(Context context){
@@ -29,7 +24,7 @@ import android.widget.Toast;
 //        super(context, name, factory, version);
         SQLiteHelper sqLiteHelper = new SQLiteHelper(context);
         //获取sqLiteDatabase对象
-        db = sqLiteHelper.getWritableDatabase();
+        sqLiteDatabase = sqLiteHelper.getWritableDatabase();
     }
 
     /**
@@ -38,16 +33,16 @@ import android.widget.Toast;
      * */
     public boolean insertUser(String Gnum, String Gpassword, String Gname, String Ggender, String Gphone, String Gaddress){
         ContentValues values = new ContentValues();
-        values.put("Gnum","qwe");
-        values.put("Gpassword","qwe");
-        values.put("Gname","qwe");
-        values.put("Ggender","qwe");
-        values.put("Gphone","qwe");
-        values.put("Gaddress","qwe");
+        values.put("Gnum",Gnum);
+        values.put("Gpassword",Gpassword);
+        values.put("Gname",Gname);
+        values.put("Ggender",Ggender);
+        values.put("Gphone",Gphone);
+        values.put("Gaddress",Gaddress);
 
         //第一个是表名，第二个null，第三个是相当于sql插入语句的values
         //id用于判断是否插入成功： 如果大于0则表示插入了至少一条数据，否则插入失败
-        long id = db.insert("Guest",null, values);
+        long id = sqLiteDatabase.insert("user",null, values);
 
         return id>0?true:false;
     }
@@ -59,7 +54,7 @@ import android.widget.Toast;
     @SuppressLint("Range")
     public UserBean querryUser(String Gnum,String Gpassword, String Gname, String Ggender, String Gphone, String Gaddress){
 
-        Cursor cursor = db.query("user",new String[]{"Gnum","Gpassword","Gname","Ggender","Gphone","Gaddress"},"Gnum=? and Gpassword=? and Gname=? and Ggender=?and Gphone=?and Gaddress=?",new String[]{Gnum,Gpassword,Gname,Ggender,Gphone,Gaddress},null,null,null);
+        Cursor cursor = sqLiteDatabase.query("user",new String[]{"Gnum","Gpassword","Gname","Ggender","Gphone","Gaddress"},"Gnum=? and Gpassword=? and Gname=? and Ggender=?and Gphone=?and Gaddress=?",new String[]{Gnum,Gpassword,Gname,Ggender,Gphone,Gaddress},null,null,null);
 
         UserBean userBean = new UserBean(Gnum,Gpassword,Gname,Ggender,Gphone,Gaddress);
         while (cursor.moveToNext()){
@@ -97,7 +92,7 @@ import android.widget.Toast;
      * delete from user where username = "xxx"
      * */
     public boolean deleteUser(){
-        db.delete("user", null, null);
+        sqLiteDatabase.delete("user", null, null);
         //        long id = sqLiteDatabase.delete("user","username = ?",new String[]{username});
         return true;
     }
