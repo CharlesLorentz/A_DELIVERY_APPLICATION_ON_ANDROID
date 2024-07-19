@@ -1,1 +1,3 @@
 # A_DELIVERY_APPLICATION_ON_ANDROID
+
+Here is the README made by Charles.
