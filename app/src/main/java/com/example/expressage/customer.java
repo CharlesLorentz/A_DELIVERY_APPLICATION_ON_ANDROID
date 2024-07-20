@@ -21,33 +21,15 @@ public class customer extends AppCompatActivity {
                 finish();
             }
         });
+        ImageButton my_info=findViewById(R.id.btn_user);
+        my_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(customer.this, customer_self_info.class);
+                startActivity(intent);
+            }
+        });
 
-        Button btn_create=findViewById(R.id.btn_create);
-        btn_create.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(customer.this,create.class);
-                startActivity(intent);
-            }
-        });
-        Button btn_Sssearch=findViewById(R.id.btn_Sssearch);
-        btn_Sssearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(customer.this,send.class);
-                startActivity(intent);
-            }
-        });
-        Button btn_search=findViewById(R.id.btn_search);
-        btn_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(customer.this,receive.class);
-                startActivity(intent);
-            }
-        });
     }
 }

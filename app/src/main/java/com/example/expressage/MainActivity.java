@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity{
                 //customer
                 if(btn_customer.isChecked()){
                     Intent intent = new Intent();
-                    intent.setClass(MainActivity.this, company.class);
+                    intent.setClass(MainActivity.this, customer.class);
                     startActivity(intent);
                 }
                 if(!btn_company.isChecked()&&!btn_customer.isChecked()&&!btn_courier.isChecked()){
