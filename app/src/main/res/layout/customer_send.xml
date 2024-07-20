@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="76dp"
+        android:layout_height="45dp"
+        android:text="寄件"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="24dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="83dp"
+        android:layout_height="77dp"
+        app:srcCompat="@drawable/send2"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="75dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/receive"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="176dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="121dp"
+        android:layout_height="19dp"
+        android:text="请填写寄件人信息"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="75dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请填写收件人信息"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="176dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="寄出方式"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="315dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
+        android:text="服务点自寄"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="296dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
+        android:text="上门寄出"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="349dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务类型"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="461dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
+        android:text="到付"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="461dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
+        android:text="寄付"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="515dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

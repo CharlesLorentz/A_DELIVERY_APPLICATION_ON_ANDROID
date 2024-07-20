@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="查看快递单"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="150dp"/>
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_search"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="150dp"-->
+    <!--        android:layout_marginTop="300dp"-->
+    <!--        android:text="查看快递单" />-->
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -20,19 +20,61 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/back" />
 
-    <Button
-        android:id="@+id/btn_create"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="寄快递"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="50dp"/>
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="140dp"
+        android:layout_height="131dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/ask" />
 
-    <Button
-        android:id="@+id/btn_Sssearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="查看派送单"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="250dp"/>
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="140dp"
+        android:layout_height="131dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/send" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="336dp"
+        android:layout_height="146dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="200dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="335dp"
+        android:layout_height="156dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="400dp"
+        android:text="TextView" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="46dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="375dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/user2" />
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_create"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="寄快递"-->
+    <!--        android:layout_marginTop="300dp"-->
+    <!--        android:layout_marginLeft="50dp"/>-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_Sssearch"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="250dp"-->
+    <!--        android:layout_marginTop="300dp"-->
+    <!--        android:text="查看派送单" />-->
+
 </RelativeLayout>
