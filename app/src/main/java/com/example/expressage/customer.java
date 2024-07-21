@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,6 +31,15 @@ public class customer extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+       ImageButton search = findViewById(R.id.btn_search);
+       search.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent=new Intent();
+               intent.setClass(customer.this, search.class);
+               startActivity(intent);
+           }
+       });
 
     }
 }

@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/back" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btn_search"
         android:layout_width="140dp"
         android:layout_height="131dp"
         android:layout_marginLeft="35dp"

@@ -104,7 +104,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SQLiteHelper"
+            android:name=".search"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -113,7 +113,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BaseDao"
+            android:name=".SQLiteHelper"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -121,6 +121,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".UserDao"
             android:exported="true">

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+
 
 
 //删除数据库
