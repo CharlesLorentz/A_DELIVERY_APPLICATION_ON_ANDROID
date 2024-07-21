@@ -2,7 +2,9 @@ package com.example.expressage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import java.io.File;
 
 
 public class MainActivity extends AppCompatActivity{
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity{
                 //company
                 if(btn_company.isChecked()) {
                     Intent intent = new Intent();
-                    intent.setClass(MainActivity.this, customer.class);
+                    intent.setClass(MainActivity.this,company.class);
                     startActivity(intent);
                 }
                 //courier
@@ -85,6 +88,33 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+
+
+//删除数据库
+
+//            Context context = getApplicationContext();
+//            String databasePath = context.getDatabasePath("user.db").getPath();
+//
+//
+//            SQLiteDatabase database = SQLiteDatabase.openDatabase(databasePath, null, SQLiteDatabase.OPEN_READWRITE);
+//            database.close();
+//
+//
+//            File databaseFile = new File(databasePath);
+//            if (databaseFile.exists()) {
+//                boolean deleted = databaseFile.delete();
+//                if (deleted) {
+//                    System.out.println("成功删除");
+//                } else {
+//                    System.out.println("成功删除");
+//                }
+//            } else {
+//                System.out.println("不存在");
+//            }
+
+
+
+
     }
 
 

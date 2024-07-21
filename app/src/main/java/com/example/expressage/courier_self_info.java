@@ -12,7 +12,7 @@ public class courier_self_info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.courier_self_info);
 
-        ImageButton back = findViewById(R.id.back);
+        ImageButton back = findViewById(R.id.btn_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
