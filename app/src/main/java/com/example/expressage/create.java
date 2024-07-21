@@ -24,7 +24,7 @@ public class create extends AppCompatActivity {
             }
         });
 
-        ImageButton btn_back2=findViewById(R.id.btn_back2);
+        ImageButton btn_back2=findViewById(R.id.btn_back);
         btn_back2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

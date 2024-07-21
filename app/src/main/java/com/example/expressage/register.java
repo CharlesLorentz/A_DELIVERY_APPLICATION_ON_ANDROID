@@ -1,5 +1,6 @@
 package com.example.expressage;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,16 @@ public class register extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                boolean flag;
+//                flag=userDao.deleteUser();
+//                if(flag){
+//                    Toast.makeText(register.this, "删除成功:>", Toast.LENGTH_SHORT).show();
+//                }
+
+
+
+
+
                 finish();
             }
         });
@@ -49,21 +60,22 @@ public class register extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Gnum=num.getText().toString();
-               Gpassword=password.getText().toString();
-               Gname=name.getText().toString();
-               Ggender=gender.getText().toString();
-               Gphone=phone.getText().toString();
-               Gaddress=address.getText().toString();
+                Gnum=num.getText().toString();
+                Gpassword=password.getText().toString();
+                Gname=name.getText().toString();
+                Ggender=gender.getText().toString();
+                Gphone=phone.getText().toString();
+                Gaddress=address.getText().toString();
 
 //                Toast.makeText(register.this, password.getText().getClass().toString(), Toast.LENGTH_SHORT).show();
                 if(password.getText().toString().equals(confirm.getText().toString())){
                     boolean result = userDao.insertUser(Gnum,Gpassword,Gname,Ggender,Gphone,Gaddress);
                     if(result){
-                        Toast.makeText(register.this, Gnum+Gpassword+Gname+Ggender+Gphone+Gaddress, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(register.this, "注册成功:>", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                     else{
-                        Toast.makeText(register.this, "false", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(register.this, "账号重复...", Toast.LENGTH_SHORT).show();
                     }
 
                 }
@@ -71,6 +83,7 @@ public class register extends AppCompatActivity {
 //                if(password.getText() != confirm.getText()){
                     Toast.makeText(register.this, "密码与确认密码的内容不同 请重新输入:>", Toast.LENGTH_SHORT).show();
                 }
+
 //
             }
         });

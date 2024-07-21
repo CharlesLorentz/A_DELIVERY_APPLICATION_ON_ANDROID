@@ -11,7 +11,7 @@ public class receive extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receive);
-        ImageButton imageButton=findViewById(R.id.imageButton);
+        ImageButton imageButton=findViewById(R.id.btn_back);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
