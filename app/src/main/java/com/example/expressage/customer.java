@@ -30,6 +30,15 @@ public class customer extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ImageButton send=findViewById(R.id.send);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(customer.this, customer_send.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
