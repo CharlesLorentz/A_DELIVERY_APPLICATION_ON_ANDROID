@@ -30,14 +30,14 @@
         app:srcCompat="@drawable/ask" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/send"
         android:layout_width="140dp"
         android:layout_height="131dp"
         android:layout_marginLeft="230dp"
         android:layout_marginTop="50dp"
         app:srcCompat="@drawable/send" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView16"
         android:layout_width="336dp"
         android:layout_height="146dp"
@@ -45,7 +45,7 @@
         android:layout_marginTop="200dp"
         android:text="TextView" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView17"
         android:layout_width="335dp"
         android:layout_height="156dp"

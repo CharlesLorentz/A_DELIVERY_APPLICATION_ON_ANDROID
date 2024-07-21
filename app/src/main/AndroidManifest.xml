@@ -113,7 +113,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BaseDao"
+            android:name=".customer_send"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

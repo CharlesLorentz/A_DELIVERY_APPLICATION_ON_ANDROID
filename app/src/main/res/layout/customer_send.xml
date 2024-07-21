@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="76dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:text="寄件"
+        android:textSize="34sp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="83dp"
+        android:layout_height="77dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="70dp"
+        app:srcCompat="@drawable/send2" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="150dp"
+        app:srcCompat="@drawable/receive" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="121dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="100dp"
+        android:text="请填写寄件人信息" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="180dp"
+        android:text="请填写收件人信息" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="480dp"
+        android:text="寄出方式"
+        android:textSize="24sp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="450dp"
+        android:text="服务点自寄" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="500dp"
+        android:text="上门寄出" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="350dp"
+        android:text="服务类型"
+        android:textSize="24sp" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="350dp"
+        android:text="到付" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="300dp"
+        android:text="寄付" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/back" />
+
+</RelativeLayout>
