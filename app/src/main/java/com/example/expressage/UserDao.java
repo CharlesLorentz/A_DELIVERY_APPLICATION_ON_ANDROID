@@ -66,10 +66,17 @@ import android.widget.Toast;
             userBean.setGaddress(cursor.getString(cursor.getColumnIndex("Gaddress")));
 
 //            Log.e("tag", userBean.getGnum() + "|" + userBean.getGname() + "|" + userBean.getGgender() + "|" + userBean.getGphone() + "|" + userBean.getGaddress());
-            System.out.println(Gnum+Gname+Ggender+Gphone+Gaddress);
+
         }
         cursor.close();
         return userBean;
+    }
+
+    public boolean checkUser(String account,String passwoed){
+        Cursor cursor = sqLiteDatabase.query("user",new String[]{"Gnum","Gpassword"},"Gnum=? and Gpassword=? and Gname=? ",new String[]{account,passwoed},null,null,null);
+        int count=cursor.getCount();
+        cursor.close();
+        return count>0;
     }
 
     /**

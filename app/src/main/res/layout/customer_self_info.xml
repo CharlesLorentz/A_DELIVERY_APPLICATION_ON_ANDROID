@@ -14,55 +14,60 @@
         android:layout_marginTop="180dp"
         android:text="name" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView8"
         android:layout_width="350dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="200dp"
         android:text="TextView" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView9"
         android:layout_width="350dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="240dp"
         android:text="TextView" />
-    <TextView
+
+    <EditText
         android:id="@+id/textView10"
         android:layout_width="350dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="280dp"
         android:text="TextView" />
-    <TextView
+
+    <EditText
         android:id="@+id/textView11"
         android:layout_width="350dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="290dp"
-        android:text="TextView" />
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="350dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="320dp"
         android:text="TextView" />
-    <TextView
+
+    <EditText
+        android:id="@+id/textView12"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="360dp"
+        android:text="TextView" />
+
+    <EditText
         android:id="@+id/textView13"
         android:layout_width="350dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="400dp"
         android:text="TextView" />
-    <TextView
+
+    <EditText
         android:id="@+id/textView14"
         android:layout_width="350dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="440dp"
         android:text="TextView" />
 
     <ImageButton
@@ -79,13 +84,5 @@
         android:layout_marginLeft="140dp"
         android:layout_marginTop="50dp"
         app:srcCompat="@drawable/user" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="130dp"
-        android:text="修改个人信息"
-        tools:layout_marginTop="400dp" />
 
 </RelativeLayout>
