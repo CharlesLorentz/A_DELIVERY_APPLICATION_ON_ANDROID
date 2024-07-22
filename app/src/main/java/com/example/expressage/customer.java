@@ -10,14 +10,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class customer extends AppCompatActivity {
-    String Gnum;
+    String num;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer);
 
         Intent intent=getIntent();
-        Gnum = intent.getStringExtra("Gnum");
+        num = intent.getStringExtra("num");
 
 
         ImageButton back=findViewById(R.id.btn_back);
@@ -33,7 +33,7 @@ public class customer extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(customer.this, customer_self_info.class);
-                intent.putExtra("Gnum",Gnum);
+                intent.putExtra("num",num);
                 startActivity(intent);
             }
         });

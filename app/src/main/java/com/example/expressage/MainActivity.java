@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity{
         CheckBox btn_customer=findViewById(R.id.btn_customer);
 
         Button btn_login=findViewById(R.id.btn_login);
-        EditText account=findViewById(R.id.editTextTextPassword);
-        EditText password=findViewById(R.id.editTextTextPassword2);
+        EditText account_edit=findViewById(R.id.editTextTextPassword);
+        EditText password_edit=findViewById(R.id.editTextTextPassword2);
 
 
 
@@ -72,35 +72,44 @@ public class MainActivity extends AppCompatActivity{
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Gnum=account.getText().toString();
-                String Gpasswoed=password.getText().toString();
-//
+                String num=account_edit.getText().toString();
+                String password=password_edit.getText().toString();
+
+                String identity = "";
+                if (btn_company.isChecked()) identity = "company";
+                if (btn_courier.isChecked()) identity = "courier";
+                if (btn_customer.isChecked()) identity = "customer";
+                if(!btn_company.isChecked()&&!btn_customer.isChecked()&&!btn_courier.isChecked()){
+                    Toast.makeText(MainActivity.this, "请选择一个登入身份", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 //                boolean flag=userDao.checkUser(acc,pas);
 //                if(flag) {
                 SQLiteDatabase sdb=sqLiteHelper.getReadableDatabase();
-                String sql="select * from user where Gnum=? and Gpassword=?";
-                Cursor cursor=sdb.rawQuery(sql, new String[]{Gnum,Gpasswoed});
+                String sql="select * from user where num=? and identity=? and password=?";
+                Cursor cursor=sdb.rawQuery(sql, new String[]{num,identity,password});
                 if(cursor.moveToFirst()==true){
 
                     //company
                     if (btn_company.isChecked()) {
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, company.class);
-                        intent.putExtra("Gnum",Gnum);
+                        intent.putExtra("num",num);
                         startActivity(intent);
                     }
                     //courier
                     if (btn_courier.isChecked()) {
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, courier.class);
-                        intent.putExtra("Gnum",Gnum);
+                        intent.putExtra("num",num);
                         startActivity(intent);
                     }
                     //customer
                     if (btn_customer.isChecked()) {
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, customer.class);
-                        intent.putExtra("Gnum",Gnum);
+                        intent.putExtra("num",num);
                         startActivity(intent);
                     }
                 }else {
@@ -110,9 +119,7 @@ public class MainActivity extends AppCompatActivity{
 //                }else{
 //                    Toast.makeText(MainActivity.this, acc+pas, Toast.LENGTH_SHORT).show();
 //                }
-                if(!btn_company.isChecked()&&!btn_customer.isChecked()&&!btn_courier.isChecked()){
-                    Toast.makeText(MainActivity.this, "请选择一个登入身份", Toast.LENGTH_SHORT).show();
-                }
+
             }
         });
         Button btn_register=findViewById(R.id.btn_register);
@@ -121,13 +128,27 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(MainActivity.this, register.class);
-                startActivity(intent);
+                if (btn_company.isChecked()){
+                    intent.putExtra("identity","company");
+                    startActivity(intent);
+                }
+                if (btn_courier.isChecked()){
+                    intent.putExtra("identity","courier");
+                    startActivity(intent);
+                }
+                if (btn_customer.isChecked()){
+                    intent.putExtra("identity","customer");
+                    startActivity(intent);
+                }
+                if(!btn_company.isChecked()&&!btn_customer.isChecked()&&!btn_courier.isChecked()){
+                    Toast.makeText(MainActivity.this, "请选择一个注册身份", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
 
 //删除数据库
-//
+
 //            Context context = getApplicationContext();
 //            String databasePath = context.getDatabasePath("user.db").getPath();
 //

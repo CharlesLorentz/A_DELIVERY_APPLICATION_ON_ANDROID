@@ -1,64 +1,64 @@
 package com.example.expressage;
 
 public class UserBean {
-    // Gnum, Gname, Ggender, Gphone, Gaddress
-    private String Gnum;
-    private String Gpassword;
-    private String Gname;
-    private String Ggender;
-    private String Gphone;
-    private String Gaddress;
+    // num, name, gender, phone, address
+    private String num;
+    private String password;
+    private String name;
+    private String gender;
+    private String phone;
+    private String address;
 
-    public UserBean(String  Gnum,String Gpassword, String Gname, String Ggender,String Gphone,String Gaddress ){
+    public UserBean(String num,String password, String name, String gender,String phone,String address ){
         super();
-        this.Gnum=Gnum;
-        this.Gpassword=Gpassword;
-        this.Gname=Gname;
-        this.Ggender=Ggender;
-        this.Gphone=Gphone;
-        this.Gaddress=Gaddress;
+        this.num=num;
+        this.password=password;
+        this.name=name;
+        this.gender=gender;
+        this.phone=phone;
+        this.address=address;
     }
 
-    public  String getGnum(){
-        return Gnum;
+    public  String getnum(){
+        return num;
     }
-    public void setGnum(String Gnum){
-        this.Gnum=Gnum;
+    public void setnum(String num){
+        this.num=num;
     }
-    public  String getGpassword(){
-        return Gpassword;
+    public  String getpassword(){
+        return password;
     }
-    public void setGpassword(String Gpassword){this.Gpassword=Gpassword;}
-    public String getGname() {
-        return Gname;
-    }
-
-    public void setGname(String Gname) {
-        this.Gname = Gname;
+    public void setpassword(String password){this.password=password;}
+    public String getname() {
+        return name;
     }
 
-    public String getGgender() {
-        return Ggender;
+    public void setname(String name) {
+        this.name = name;
     }
 
-    public void setGgender(String Ggender) {
-        this.Ggender = Ggender;
+    public String getgender() {
+        return gender;
     }
 
-    public String getGphone() {
-        return Gphone;
+    public void setgender(String gender) {
+        this.gender = gender;
     }
 
-    public void setGphone(String Gphone) {
-        this.Gphone = Gphone;
+    public String getphone() {
+        return phone;
     }
 
-    public String getGaddress() {
-        return Gaddress;
+    public void setphone(String phone) {
+        this.phone = phone;
     }
 
-    public void setGaddress(String Gaddress) {
-        this.Gaddress=Gaddress;
+    public String getaddress() {
+        return address;
+    }
+
+    public void setaddress(String address) {
+        this.address=address;
     }
 
     @Override
