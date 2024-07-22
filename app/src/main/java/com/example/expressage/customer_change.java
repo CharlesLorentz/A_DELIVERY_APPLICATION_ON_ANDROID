@@ -26,7 +26,7 @@ public class customer_change extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent();
-                intent.setClass(customer_change.this, customer_self_info.class);
+                intent.setClass(customer_change.this, customer.class);
                 startActivity(intent);
             }
         });
