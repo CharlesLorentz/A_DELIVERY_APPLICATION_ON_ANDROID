@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,6 +31,7 @@ public class customer extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         ImageButton send=findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
