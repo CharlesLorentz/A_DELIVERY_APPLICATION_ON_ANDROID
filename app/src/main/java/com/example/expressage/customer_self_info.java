@@ -44,12 +44,12 @@ public class customer_self_info extends AppCompatActivity {
         String sql="select * from user where Gnum=?";
         Cursor cursor=sdb.rawQuery(sql, new String[]{num});
         if(cursor.moveToFirst()==true){
-            Number.setText(cursor.getString(cursor.getColumnIndex("Gnum")));
-            Password.setText(cursor.getString(cursor.getColumnIndex("Gpassword")));
+            Number.setText("账号"+"  "+ cursor.getString(cursor.getColumnIndex("Gnum")));
+            Password.setText("密码"+"  "+cursor.getString(cursor.getColumnIndex("Gpassword")));
             Name.setText(cursor.getString(cursor.getColumnIndex("Gname")));
-            Gender.setText(cursor.getString(cursor.getColumnIndex("Ggender")));
-            Phone.setText(cursor.getString(cursor.getColumnIndex("Gphone")));
-            Address.setText(cursor.getString(cursor.getColumnIndex("Gaddress")));
+            Gender.setText("性别"+"  "+cursor.getString(cursor.getColumnIndex("Ggender")));
+            Phone.setText("电话"+"  "+cursor.getString(cursor.getColumnIndex("Gphone")));
+            Address.setText("地址"+"  "+cursor.getString(cursor.getColumnIndex("Gaddress")));
         }
 //        while (cursor.moveToNext()){
 //            Name.setText(cursor.getString(cursor.getColumnIndex("Gname")));
