@@ -31,14 +31,15 @@ import android.widget.Toast;
      * 插入一条记录进入user表
      * insert into user("username","password") values("zhangsan","123456");
      * */
-    public boolean insertUser(String Gnum, String Gpassword, String Gname, String Ggender, String Gphone, String Gaddress){
+    public boolean insertUser(String num, String identity, String password, String name, String gender, String phone, String address){
         ContentValues values = new ContentValues();
-        values.put("Gnum",Gnum);
-        values.put("Gpassword",Gpassword);
-        values.put("Gname",Gname);
-        values.put("Ggender",Ggender);
-        values.put("Gphone",Gphone);
-        values.put("Gaddress",Gaddress);
+        values.put("num", num);
+        values.put("identity", identity);
+        values.put("password", password);
+        values.put("name", name);
+        values.put("gender", gender);
+        values.put("phone", phone);
+        values.put("address", address);
 
         //第一个是表名，第二个null，第三个是相当于sql插入语句的values
         //id用于判断是否插入成功： 如果大于0则表示插入了至少一条数据，否则插入失败
@@ -52,18 +53,18 @@ import android.widget.Toast;
      * select * from user where username = "zhangsan";
      * */
     @SuppressLint("Range")
-    public UserBean querryUser(String Gnum,String Gpassword, String Gname, String Ggender, String Gphone, String Gaddress){
+    public UserBean querryUser(String num, String identity,String password, String name, String gender, String phone, String address){
 
-        Cursor cursor = sqLiteDatabase.query("user",new String[]{"Gnum","Gpassword","Gname","Ggender","Gphone","Gaddress"},"Gnum=? and Gpassword=? and Gname=? and Ggender=?and Gphone=?and Gaddress=?",new String[]{Gnum,Gpassword,Gname,Ggender,Gphone,Gaddress},null,null,null);
+        Cursor cursor = sqLiteDatabase.query("user",new String[]{"num","password","name","gender","phone","address"},"num=? and password=? and name=? and gender=?and phone=?and address=?",new String[]{num,password,name,gender,phone,address},null,null,null);
 
-        UserBean userBean = new UserBean(Gnum,Gpassword,Gname,Ggender,Gphone,Gaddress);
+        UserBean userBean = new UserBean(num,password,name,gender,phone,address);
         while (cursor.moveToNext()){
-            userBean.setGnum(cursor.getString(cursor.getColumnIndex("Gnum")));
-            userBean.setGpassword(cursor.getString(cursor.getColumnIndex("Gpassword")));
-            userBean.setGname(cursor.getString(cursor.getColumnIndex("Gname")));
-            userBean.setGgender(cursor.getString(cursor.getColumnIndex("Ggender")));
-            userBean.setGphone(cursor.getString(cursor.getColumnIndex("Gphone")));
-            userBean.setGaddress(cursor.getString(cursor.getColumnIndex("Gaddress")));
+            userBean.setnum(cursor.getString(cursor.getColumnIndex("num")));
+            userBean.setpassword(cursor.getString(cursor.getColumnIndex("password")));
+            userBean.setname(cursor.getString(cursor.getColumnIndex("name")));
+            userBean.setgender(cursor.getString(cursor.getColumnIndex("gender")));
+            userBean.setphone(cursor.getString(cursor.getColumnIndex("phone")));
+            userBean.setaddress(cursor.getString(cursor.getColumnIndex("address")));
 
 //            Log.e("tag", userBean.getGnum() + "|" + userBean.getGname() + "|" + userBean.getGgender() + "|" + userBean.getGphone() + "|" + userBean.getGaddress());
 
@@ -72,8 +73,8 @@ import android.widget.Toast;
         return userBean;
     }
 
-    public boolean checkUser(String account,String passwoed){
-        Cursor cursor = sqLiteDatabase.query("user",new String[]{"Gnum","Gpassword"},"Gnum=? and Gpassword=? and Gname=? ",new String[]{account,passwoed},null,null,null);
+    public boolean checkUser(String account,String password){
+        Cursor cursor = sqLiteDatabase.query("user",new String[]{"num","password"},"num=? and password=? and name=? ",new String[]{account,password},null,null,null);
         int count=cursor.getCount();
         cursor.close();
         return count>0;

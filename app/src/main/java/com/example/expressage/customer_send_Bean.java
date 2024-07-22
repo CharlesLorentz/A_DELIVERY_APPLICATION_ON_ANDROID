@@ -1,7 +1,7 @@
 package com.example.expressage;
 
 public class customer_send_Bean {
-    private String Gnum;
+    private String num;
     private String Send_info;
     private String Get_info;
     private String Sserver;
@@ -16,10 +16,10 @@ public class customer_send_Bean {
 
     }
     public  String getGnum(){
-        return Gnum;
+        return num;
     }
-    public void setGnum(String Gnum){
-        this.Gnum=Gnum;
+    public void setGnum(String num){
+        this.num=num;
     }
     public  String getSend_info(){
         return Send_info;

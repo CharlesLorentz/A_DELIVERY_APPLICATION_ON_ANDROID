@@ -20,7 +20,7 @@ public class customer_self_info extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent=getIntent();
-        num=intent.getStringExtra("Gnum");
+        num=intent.getStringExtra("num");
 //        Toast.makeText(this, num, Toast.LENGTH_SHORT).show();
         sqLiteHelper=new SQLiteHelper(this);
 
@@ -41,15 +41,16 @@ public class customer_self_info extends AppCompatActivity {
         TextView Address=findViewById(R.id.address);
 
         SQLiteDatabase sdb=sqLiteHelper.getReadableDatabase();
-        String sql="select * from user where Gnum=?";
+        String sql="select * from user where num=?";
         Cursor cursor=sdb.rawQuery(sql, new String[]{num});
         if(cursor.moveToFirst()==true){
-            Number.setText("账号"+"  "+ cursor.getString(cursor.getColumnIndex("Gnum")));
-            Password.setText("密码"+"  "+cursor.getString(cursor.getColumnIndex("Gpassword")));
-            Name.setText(cursor.getString(cursor.getColumnIndex("Gname")));
-            Gender.setText("性别"+"  "+cursor.getString(cursor.getColumnIndex("Ggender")));
-            Phone.setText("电话"+"  "+cursor.getString(cursor.getColumnIndex("Gphone")));
-            Address.setText("地址"+"  "+cursor.getString(cursor.getColumnIndex("Gaddress")));
+            Number.setText("账号"+"  "+ cursor.getString(cursor.getColumnIndex("num")));
+            Password.setText("密码"+"  "+cursor.getString(cursor.getColumnIndex("password")));
+            cursor.getString(cursor.getColumnIndex("identity"));
+            Name.setText(cursor.getString(cursor.getColumnIndex("name")));
+            Gender.setText("性别"+"  "+cursor.getString(cursor.getColumnIndex("gender")));
+            Phone.setText("电话"+"  "+cursor.getString(cursor.getColumnIndex("phone")));
+            Address.setText("地址"+"  "+cursor.getString(cursor.getColumnIndex("address")));
         }
 //        while (cursor.moveToNext()){
 //            Name.setText(cursor.getString(cursor.getColumnIndex("Gname")));

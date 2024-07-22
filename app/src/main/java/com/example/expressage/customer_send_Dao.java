@@ -33,11 +33,11 @@ public class customer_send_Dao {
     @SuppressLint("Range")
     public customer_send_Bean querryUser(String Gnum, String Send_info, String Get_info, String Sserver, String Sway){
 
-        Cursor cursor = sqLiteDatabase.query("send",new String[]{"Gnum","Send_info","Get_info","Sserver","Sway"},"Gnum=? and Send_info=? and Get_info=? and Sserver=?and Sway=?",new String[]{Gnum,Send_info,Get_info,Sserver,Sway},null,null,null);
+        Cursor cursor = sqLiteDatabase.query("send",new String[]{"num","Send_info","Get_info","Sserver","Sway"},"num=? and Send_info=? and Get_info=? and Sserver=?and Sway=?",new String[]{Gnum,Send_info,Get_info,Sserver,Sway},null,null,null);
 
         customer_send_Bean sendBean = new customer_send_Bean(Send_info,Get_info,Sserver,Sway);
         while (cursor.moveToNext()){
-            sendBean.setGnum(cursor.getString(cursor.getColumnIndex("Gnum")));
+            sendBean.setGnum(cursor.getString(cursor.getColumnIndex("num")));
             sendBean.setSend_info(cursor.getString(cursor.getColumnIndex("Send_info")));
             sendBean.setGet_info(cursor.getString(cursor.getColumnIndex("Get_info")));
             sendBean.setSserver(cursor.getString(cursor.getColumnIndex("Sserver")));
