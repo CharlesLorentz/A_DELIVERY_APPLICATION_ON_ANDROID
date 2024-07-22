@@ -6,7 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/send"
         android:layout_width="76dp"
         android:layout_height="45dp"
         android:layout_marginLeft="150dp"
@@ -30,16 +30,16 @@ android:layout_height="match_parent">
         android:layout_marginTop="150dp"
         app:srcCompat="@drawable/receive" />
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="121dp"
-        android:layout_height="19dp"
+    <EditText
+        android:id="@+id/send_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="100dp"
         android:text="请填写寄件人信息" />
 
-    <TextView
-        android:id="@+id/textView19"
+    <EditText
+        android:id="@+id/get_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
@@ -47,7 +47,7 @@ android:layout_height="match_parent">
         android:text="请填写收件人信息" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/send_way"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -56,7 +56,7 @@ android:layout_height="match_parent">
         android:textSize="24sp" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/send_self"
         android:layout_width="102dp"
         android:layout_height="54dp"
         android:layout_marginLeft="150dp"
@@ -64,7 +64,7 @@ android:layout_height="match_parent">
         android:text="服务点自寄" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/send_door"
         android:layout_width="102dp"
         android:layout_height="54dp"
         android:layout_marginLeft="150dp"
@@ -72,7 +72,7 @@ android:layout_height="match_parent">
         android:text="上门寄出" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/server"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -81,7 +81,7 @@ android:layout_height="match_parent">
         android:textSize="24sp" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/send_there"
         android:layout_width="102dp"
         android:layout_height="54dp"
         android:layout_marginLeft="150dp"
@@ -89,7 +89,7 @@ android:layout_height="match_parent">
         android:text="到付" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/send_here"
         android:layout_width="102dp"
         android:layout_height="54dp"
         android:layout_marginLeft="150dp"
@@ -102,5 +102,13 @@ android:layout_height="match_parent">
         android:layout_height="55dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/back" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="600dp"
+        android:text="完成" />
 
 </RelativeLayout>
