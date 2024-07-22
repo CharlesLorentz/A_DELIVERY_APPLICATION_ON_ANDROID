@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_USER_TABLE="create table user(Gnum text primary key,Gpassword text,Gname text,Ggender text,Gphone text,Gaddress text)";
+    private static final String CREATE_SEND_TABLE="create table send(Gnum text primary key,Send_info text,Get_info text,Sserver text, Sway text)";
 
     //    public SQLiteHelper( Context context,  String name,  SQLiteDatabase.CursorFactory factory, int version) {
 //        super(context, name, factory, version);
@@ -26,6 +27,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
      */
     public void onCreate(SQLiteDatabase sqLiteDatabase){
        sqLiteDatabase.execSQL(CREATE_USER_TABLE);
+        sqLiteDatabase.execSQL(CREATE_SEND_TABLE);
     }
 
     @Override
