@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.widget.Button;
 public class customer_self_info extends AppCompatActivity {
     String num;
     SQLiteHelper sqLiteHelper;
@@ -60,6 +60,14 @@ public class customer_self_info extends AppCompatActivity {
 //            Address.setText(cursor.getString(cursor.getColumnIndex("Gaddress")));
 //
 //        }
-
+        Button change=findViewById(R.id.change);
+        change.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(customer_self_info.this, customer_change.class);
+                startActivity(intent);
+            }
+        });
     }
 }
