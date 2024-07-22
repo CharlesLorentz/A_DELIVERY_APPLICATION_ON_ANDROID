@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="185dp"
@@ -15,7 +15,7 @@
         android:text="name" />
 
     <EditText
-        android:id="@+id/textView8"
+        android:id="@+id/number"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginLeft="15dp"
@@ -23,7 +23,7 @@
         android:text="TextView" />
 
     <EditText
-        android:id="@+id/textView9"
+        android:id="@+id/password"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginLeft="15dp"
@@ -31,7 +31,7 @@
         android:text="TextView" />
 
     <EditText
-        android:id="@+id/textView10"
+        android:id="@+id/gender"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginLeft="15dp"
@@ -39,7 +39,7 @@
         android:text="TextView" />
 
     <EditText
-        android:id="@+id/textView11"
+        android:id="@+id/phone"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginLeft="15dp"
@@ -47,27 +47,11 @@
         android:text="TextView" />
 
     <EditText
-        android:id="@+id/textView12"
+        android:id="@+id/address"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="360dp"
-        android:text="TextView" />
-
-    <EditText
-        android:id="@+id/textView13"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="400dp"
-        android:text="TextView" />
-
-    <EditText
-        android:id="@+id/textView14"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="440dp"
         android:text="TextView" />
 
     <ImageButton

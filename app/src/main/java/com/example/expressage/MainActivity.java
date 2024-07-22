@@ -81,23 +81,26 @@ public class MainActivity extends AppCompatActivity{
                 String sql="select * from user where Gnum=? and Gpassword=?";
                 Cursor cursor=sdb.rawQuery(sql, new String[]{Gnum,Gpasswoed});
                 if(cursor.moveToFirst()==true){
-                    cursor.close();
+
                     //company
                     if (btn_company.isChecked()) {
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, company.class);
+                        intent.putExtra("Gnum",Gnum);
                         startActivity(intent);
                     }
                     //courier
                     if (btn_courier.isChecked()) {
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, courier.class);
+                        intent.putExtra("Gnum",Gnum);
                         startActivity(intent);
                     }
                     //customer
                     if (btn_customer.isChecked()) {
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, customer.class);
+                        intent.putExtra("Gnum",Gnum);
                         startActivity(intent);
                     }
                 }else {
