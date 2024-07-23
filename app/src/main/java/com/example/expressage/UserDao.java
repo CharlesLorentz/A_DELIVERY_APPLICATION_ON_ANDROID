@@ -84,12 +84,16 @@ import android.widget.Toast;
      * 修改数据库表记录
      * update user set password = 123123 where username = zhangsan
      * */
-    public boolean updateUser(String longitude, String latitude, String country, String province, String city, String county, String street, String hnumber, String bump){
-
-//        ContentValues values = new ContentValues();
-//        values.put("password",newpassword);
-//        long id = sqLiteDatabase.update("user",values,"username = ? ",new String[]{username});
-//        flag = id > 0?true : false;
+    public boolean updateUser(String num,String name,String password,String gender,String phone,String address){
+        Boolean flag;
+        ContentValues values = new ContentValues();
+        values.put("password",password);
+        values.put("name",name);
+        values.put("gender",gender);
+        values.put("phone",phone);
+        values.put("address",address);
+        long id = sqLiteDatabase.update("user",values,"num = ? ",new String[]{num});
+        flag = id > 0?true : false;
         return true;
     }
 
@@ -99,8 +103,8 @@ import android.widget.Toast;
      * 删除
      * delete from user where username = "xxx"
      * */
-    public boolean deleteUser(){
-        sqLiteDatabase.delete("user", null, null);
+    public boolean deleteUser(String num){
+        sqLiteDatabase.delete("user", "num=?", new String[]{num});
         //        long id = sqLiteDatabase.delete("user","username = ?",new String[]{username});
         return true;
     }

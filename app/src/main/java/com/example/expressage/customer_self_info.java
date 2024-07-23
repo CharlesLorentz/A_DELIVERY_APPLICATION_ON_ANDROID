@@ -1,5 +1,7 @@
 package com.example.expressage;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,12 +16,14 @@ import android.widget.Button;
 public class customer_self_info extends AppCompatActivity {
     String num;
     SQLiteHelper sqLiteHelper;
+    UserDao userDao;
 
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent=getIntent();
+        userDao = new UserDao(this);
         num=intent.getStringExtra("num");
 //        Toast.makeText(this, num, Toast.LENGTH_SHORT).show();
         sqLiteHelper=new SQLiteHelper(this);
@@ -67,7 +71,45 @@ public class customer_self_info extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(customer_self_info.this, customer_change.class);
+                intent.putExtra("num",num);
                 startActivity(intent);
+            }
+        });
+        Button delete=findViewById(R.id.delete);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder dialog=new AlertDialog.Builder(customer_self_info.this);
+//设置对话框
+                dialog.setTitle("注销账户");
+                dialog.setMessage("确认注销请点击确定");
+                dialog.setIcon(R.mipmap.ic_launcher);
+
+
+//设置按钮
+                dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Boolean confirm=userDao.deleteUser(num);
+                        if(confirm){
+                            Toast.makeText(customer_self_info.this, "注销成功", Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent();
+                            intent.setClass(customer_self_info.this,MainActivity.class);
+                            startActivity(intent);
+
+                        }
+                        else{finish();}
+                    }
+                });
+                dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(customer_self_info.this, "谢谢您的回心转意", Toast.LENGTH_SHORT).show();
+                    }
+                });
+//显示对话框
+                dialog.show();
             }
         });
     }
