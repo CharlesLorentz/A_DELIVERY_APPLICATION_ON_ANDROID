@@ -42,6 +42,16 @@ public class courier extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button incomplete = findViewById(R.id.incomplete);
+        incomplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(courier.this, incomplete.class);
+                startActivity(intent);
+            }
+        });
+
         TextView self_info = findViewById(R.id.self_info);
         StringBuilder sb = new StringBuilder();
 
