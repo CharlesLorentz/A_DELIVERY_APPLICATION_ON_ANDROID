@@ -31,7 +31,7 @@
         android:text="性别" />
 
     <EditText
-        android:id="@+id/textView8"
+        android:id="@+id/c_name"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginLeft="60dp"
@@ -54,28 +54,28 @@
         android:text="密码" />
 
     <EditText
-        android:id="@+id/textView9"
+        android:id="@+id/c_password"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="240dp" />
 
     <EditText
-        android:id="@+id/textView10"
+        android:id="@+id/c_gender"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="280dp" />
 
     <EditText
-        android:id="@+id/textView11"
+        android:id="@+id/c_phone"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="320dp" />
 
     <EditText
-        android:id="@+id/textView12"
+        android:id="@+id/c_address"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginLeft="60dp"
