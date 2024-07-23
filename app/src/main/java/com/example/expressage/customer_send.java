@@ -83,19 +83,16 @@ public class customer_send extends AppCompatActivity {
                     Sway=send_here_text;
                 }
 
-                btn_save.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        boolean result= customer_send_dao.insertUser(Send_info,Get_info,Sserver,Sway);
-                        if(result){
-                            Toast.makeText(customer_send.this, "完成:>", Toast.LENGTH_SHORT).show();
-                            finish();
-                        }
-                        else{
-                            Toast.makeText(customer_send.this, "失败...", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+
+                boolean result= customer_send_dao.insertUser(Send_info,Get_info,Sserver,Sway);
+                if(result){
+                    Toast.makeText(customer_send.this, "完成:>", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else{
+                    Toast.makeText(customer_send.this, "失败...", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }

@@ -11,13 +11,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class customer extends AppCompatActivity {
     String num;
+    String Self_info;
+    SQLiteHelper sqLiteHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.customer);
 
         Intent intent=getIntent();
         num = intent.getStringExtra("num");
+        Self_info = intent.getStringExtra("Self_info");
+
+        sqLiteHelper = new SQLiteHelper(this);
 
 
         ImageButton back=findViewById(R.id.btn_back);

@@ -78,6 +78,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".incomplete"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".courier_self_info"
             android:exported="true">
             <intent-filter>
@@ -169,6 +178,24 @@
         </activity>
         <activity
             android:name=".customer_send_Dao"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".courier_finish_Bean"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".courier_finish_Dao"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

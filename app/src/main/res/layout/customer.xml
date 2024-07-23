@@ -38,7 +38,7 @@
         app:srcCompat="@drawable/send" />
 
     <EditText
-        android:id="@+id/textView16"
+        android:id="@+id/finish"
         android:layout_width="336dp"
         android:layout_height="146dp"
         android:layout_marginLeft="35dp"

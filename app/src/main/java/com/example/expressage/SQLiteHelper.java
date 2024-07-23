@@ -10,6 +10,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_USER_TABLE="create table user(num,identity,password,name,gender,phone,address,primary key(num,identity))";
     private static final String CREATE_SEND_TABLE="create table send(Send_info,Get_info,Sserver, Sway)";
+    private static final String CREATE_GET_TABLE="create table finish(Send_info,Get_info,name,phone,state)";
 
     //    public SQLiteHelper( Context context,  String name,  SQLiteDatabase.CursorFactory factory, int version) {
 //        super(context, name, factory, version);
@@ -28,6 +29,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase){
        sqLiteDatabase.execSQL(CREATE_USER_TABLE);
         sqLiteDatabase.execSQL(CREATE_SEND_TABLE);
+        sqLiteDatabase.execSQL(CREATE_GET_TABLE);
     }
 
     @Override
