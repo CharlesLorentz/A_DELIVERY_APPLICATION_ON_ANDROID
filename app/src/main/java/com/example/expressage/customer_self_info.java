@@ -16,14 +16,14 @@ import android.widget.Button;
 public class customer_self_info extends AppCompatActivity {
     String num;
     SQLiteHelper sqLiteHelper;
-    UserDao userDao;
+    customerDao customerDao;
 
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent=getIntent();
-        userDao = new UserDao(this);
+        customerDao = new customerDao(this);
         num=intent.getStringExtra("num");
 //        Toast.makeText(this, num, Toast.LENGTH_SHORT).show();
         sqLiteHelper=new SQLiteHelper(this);
@@ -91,7 +91,7 @@ public class customer_self_info extends AppCompatActivity {
                 dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Boolean confirm=userDao.deleteUser(num);
+                        Boolean confirm= customerDao.deleteUser(num);
                         if(confirm){
                             Toast.makeText(customer_self_info.this, "注销成功", Toast.LENGTH_SHORT).show();
                             Intent intent=new Intent();

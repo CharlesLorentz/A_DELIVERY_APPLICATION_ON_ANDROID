@@ -140,7 +140,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserDao"
+            android:name=".customerDao"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -149,7 +149,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserBean"
+            android:name=".customerBean"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

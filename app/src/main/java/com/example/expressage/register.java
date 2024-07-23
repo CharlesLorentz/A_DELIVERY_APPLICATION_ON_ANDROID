@@ -1,7 +1,6 @@
 package com.example.expressage;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class register extends AppCompatActivity {
-    UserDao userDao;
+    customerDao customerDao;
     String num;
     String password;
     String name;
@@ -26,7 +25,7 @@ public class register extends AppCompatActivity {
         setContentView(R.layout.register);
 
 //        userDao = new UserDao(this, "login.db", null, 1);
-        userDao = new UserDao(this);
+        customerDao = new customerDao(this);
         Intent identity_intent = getIntent();
         identity = identity_intent.getStringExtra("identity");
 
@@ -72,7 +71,7 @@ public class register extends AppCompatActivity {
 
 //                Toast.makeText(register.this, password.getText().getClass().toString(), Toast.LENGTH_SHORT).show();
                 if(password_edit.getText().toString().equals(confirm_edit.getText().toString())){
-                    boolean result = userDao.insertUser(num, identity, password, name, gender, phone, address);
+                    boolean result = customerDao.insertUser(num, identity, password, name, gender, phone, address);
                     if(result){
                         Toast.makeText(register.this, "注册成功:>", Toast.LENGTH_SHORT).show();
                         finish();

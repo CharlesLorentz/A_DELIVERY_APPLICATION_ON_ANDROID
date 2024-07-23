@@ -12,12 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class customer_change extends AppCompatActivity {
     String num;
-    UserDao userDao;
+    customerDao customerDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_change);
-        userDao = new UserDao(this);
+        customerDao = new customerDao(this);
         Intent intent=getIntent();
         num = intent.getStringExtra("num");
         ImageButton back = findViewById(R.id.btn_back);
@@ -38,7 +38,7 @@ public class customer_change extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Boolean judge=userDao.updateUser(num,c_name.getText().toString(),c_password.getText().toString(),c_gender.getText().toString(),c_phone.getText().toString(),c_address.getText().toString());
+                Boolean judge= customerDao.updateUser(num,c_name.getText().toString(),c_password.getText().toString(),c_gender.getText().toString(),c_phone.getText().toString(),c_address.getText().toString());
                 if(judge){
                     Toast.makeText(customer_change.this, " 修改成功:>", Toast.LENGTH_SHORT).show();
                     finish();
