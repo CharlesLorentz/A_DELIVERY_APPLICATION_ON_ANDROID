@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_USER_TABLE="create table user(num,identity,password,name,gender,phone,address,primary key(num,identity))";
-    private static final String CREATE_SEND_TABLE="create table send(Gnum text primary key,Send_info text,Get_info text,Sserver text, Sway text)";
+    private static final String CREATE_SEND_TABLE="create table send(Send_info,Get_info,Sserver, Sway)";
 
     //    public SQLiteHelper( Context context,  String name,  SQLiteDatabase.CursorFactory factory, int version) {
 //        super(context, name, factory, version);
