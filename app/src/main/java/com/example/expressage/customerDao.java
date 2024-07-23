@@ -5,8 +5,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
-import android.widget.Toast;
 
 /**
  * 数据库访问对象
@@ -14,12 +12,12 @@ import android.widget.Toast;
  * 是控制层于数据库交互的中间层，用于做数据库的增删改查具体实现
  * */
 //public class UserDao extends BaseDao {
- public class UserDao {
+ public class customerDao {
 
     private SQLiteDatabase sqLiteDatabase;
     //SQLiteDatabase对象封装了所有SQLite的增删改查语句的操作方法，让开发者直接调用就行
 
-    public UserDao(Context context){
+    public customerDao(Context context){
 //    public UserDao(Context context,  String name,  SQLiteDatabase.CursorFactory factory, int version){
 //        super(context, name, factory, version);
         SQLiteHelper sqLiteHelper = new SQLiteHelper(context);
@@ -53,24 +51,24 @@ import android.widget.Toast;
      * select * from user where username = "zhangsan";
      * */
     @SuppressLint("Range")
-    public UserBean querryUser(String num, String identity,String password, String name, String gender, String phone, String address){
+    public customerBean querryUser(String num, String identity, String password, String name, String gender, String phone, String address){
 
         Cursor cursor = sqLiteDatabase.query("user",new String[]{"num","password","name","gender","phone","address"},"num=? and password=? and name=? and gender=?and phone=?and address=?",new String[]{num,password,name,gender,phone,address},null,null,null);
 
-        UserBean userBean = new UserBean(num,password,name,gender,phone,address);
+        customerBean customerBean = new customerBean(num,password,name,gender,phone,address);
         while (cursor.moveToNext()){
-            userBean.setnum(cursor.getString(cursor.getColumnIndex("num")));
-            userBean.setpassword(cursor.getString(cursor.getColumnIndex("password")));
-            userBean.setname(cursor.getString(cursor.getColumnIndex("name")));
-            userBean.setgender(cursor.getString(cursor.getColumnIndex("gender")));
-            userBean.setphone(cursor.getString(cursor.getColumnIndex("phone")));
-            userBean.setaddress(cursor.getString(cursor.getColumnIndex("address")));
+            customerBean.setnum(cursor.getString(cursor.getColumnIndex("num")));
+            customerBean.setpassword(cursor.getString(cursor.getColumnIndex("password")));
+            customerBean.setname(cursor.getString(cursor.getColumnIndex("name")));
+            customerBean.setgender(cursor.getString(cursor.getColumnIndex("gender")));
+            customerBean.setphone(cursor.getString(cursor.getColumnIndex("phone")));
+            customerBean.setaddress(cursor.getString(cursor.getColumnIndex("address")));
 
 //            Log.e("tag", userBean.getGnum() + "|" + userBean.getGname() + "|" + userBean.getGgender() + "|" + userBean.getGphone() + "|" + userBean.getGaddress());
 
         }
         cursor.close();
-        return userBean;
+        return customerBean;
     }
 
     public boolean checkUser(String account,String password){

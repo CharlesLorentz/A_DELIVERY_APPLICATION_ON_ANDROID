@@ -1,6 +1,6 @@
 package com.example.expressage;
 
-public class UserBean {
+public class customerBean {
     // num, name, gender, phone, address
     private String num;
     private String password;
@@ -9,7 +9,7 @@ public class UserBean {
     private String phone;
     private String address;
 
-    public UserBean(String num,String password, String name, String gender,String phone,String address ){
+    public customerBean(String num, String password, String name, String gender, String phone, String address ){
         super();
         this.num=num;
         this.password=password;
