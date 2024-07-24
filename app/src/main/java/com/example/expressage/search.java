@@ -1,17 +1,25 @@
 package com.example.expressage;
 
+import android.annotation.SuppressLint;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class search extends AppCompatActivity {
+    SQLiteHelper sqLiteHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search);
+
+        sqLiteHelper=new SQLiteHelper(this);
 
         ImageButton back = findViewById(R.id.btn_back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -20,43 +28,40 @@ public class search extends AppCompatActivity {
                 finish();
             }
         });
-//        SearchView searchView = findViewById(R.id.searchView);
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                // 1. 获取用户输入的单号
-//                String trackingNumber = query;
-//
-//                // 2. 从本地数据库查询订单信息
-//                Order order = queryOrderFromDatabase(trackingNumber);
-//
-//                runOnUiThread(() -> {
-//                    // 在这里更新UI,显示订单信息
-//                    updateOrderDetails(order);
-//                });
-//
-//
-//
-//
-//                return false;
-//            }
-//            private Order queryOrderFromDatabase(String trackingNumber) {
-//                // 使用数据库操作查询订单信息
-//                // 这里假设您使用了Room数据库库
-//                OrderDao orderDao = database.orderDao();
-//                Order order = orderDao.getOrderByTrackingNumber(trackingNumber);
-//                return order;
-//            }
-//            private void updateOrderDetails(Order order) {
-//                // 在这里更新UI,显示订单信息
-//                // 例如,设置订单号、收货地址、配送状态等
-//            }
+        TextView search=findViewById(R.id.search);
+        search.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    search.setText("");
+                }
+            }
+        });
+        TextView package_show=findViewById(R.id.package_show);
 
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                return false;
-//            }
-//        });
+        Button search_buttom=findViewById(R.id.search_button);
+        search_buttom.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("Range")
+            @Override
+            public void onClick(View v) {
+                String sea=search.getText().toString();
+                StringBuilder sb = new StringBuilder();
+                SQLiteDatabase sdb=sqLiteHelper.getReadableDatabase();
+                String sql="select * from send where NDNum=?";
+                Cursor cursor=sdb.rawQuery(sql,new String[]{sea});
+                if(cursor.moveToFirst()){
+
+                    sb.append("收件人姓名: ").append(cursor.getString(cursor.getColumnIndex("Sname"))).append("\n")
+                            .append("收件人电话: ").append(cursor.getString(cursor.getColumnIndex("Sphone"))).append("\n")
+                            .append("收件人地址: ").append(cursor.getString(cursor.getColumnIndex("Sadress"))).append("\n")
+                            .append("货物名称: ").append(cursor.getString(cursor.getColumnIndex("Hname"))).append("\n\n")
+                            .append("物流公司: ").append(cursor.getString(cursor.getColumnIndex("Cname"))).append("\n\n");
+
+                    package_show.setText(sb.toString());
+                }
+            }
+        });
+
     }
 
 }

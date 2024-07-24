@@ -28,8 +28,10 @@ public class customer_send extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_send);
+
         Intent intent=getIntent();
         num=intent.getStringExtra("num");
+
         customer_send_dao = new customer_send_Dao(this);
 
         ImageButton back = findViewById(R.id.btn_back);
@@ -45,6 +47,54 @@ public class customer_send extends AppCompatActivity {
         EditText get_adress = findViewById(R.id.get_adress);
         EditText get_goods = findViewById(R.id.goods);
         EditText get_company = findViewById(R.id.company);
+
+
+        get_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    get_name.setText("");
+                }
+            }
+        });
+        get_phone.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    get_phone.setText("");
+                }
+            }
+        });
+        get_adress.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    get_adress.setText("");
+                }
+            }
+        });
+        get_goods.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    get_goods.setText("");
+                }
+            }
+        });
+        get_company.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    get_company.setText("");
+                }
+            }
+        });
+
+
+
+
+
+
 
 
 //        CheckBox send_self = findViewById(R.id.send_self);
