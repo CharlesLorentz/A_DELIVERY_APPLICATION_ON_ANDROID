@@ -16,14 +16,14 @@ public class courier_finish_Dao {
         sqLiteDatabase = sqLiteHelper.getWritableDatabase();
     }
 
-    public boolean insertUser( String Send_info, String Get_info, String name, String phone, String state){
+    public boolean insertUser( String Fnum, String num, String identity, String Dnum, String Hname){
         ContentValues values = new ContentValues();
 
-        values.put("Send_info",Send_info);
-        values.put("Get_info",Get_info);
-        values.put("name",name);
-        values.put("phone",phone);
-        values.put("state",state);
+        values.put("Fnum",Fnum);
+        values.put("num",num);
+        values.put("identity",identity);
+        values.put("Dnum",Dnum);
+        values.put("Hname",Hname);
 
 
         //第一个是表名，第二个null，第三个是相当于sql插入语句的values
@@ -39,11 +39,11 @@ public class courier_finish_Dao {
 
         courier_finish_Bean finishBean = new courier_finish_Bean(Send_info,Get_info,name,phone,state);
         while (cursor.moveToNext()){
-            finishBean.setSend_info(cursor.getString(cursor.getColumnIndex("Send_info")));
-            finishBean.setGet_info(cursor.getString(cursor.getColumnIndex("Get_info")));
-            finishBean.setname(cursor.getString(cursor.getColumnIndex("Sserver")));
-            finishBean.setphone(cursor.getString(cursor.getColumnIndex("Sway")));
-            finishBean.setstate(cursor.getString(cursor.getColumnIndex("num")));
+            finishBean.setFnum(cursor.getString(cursor.getColumnIndex("Send_info")));
+            finishBean.setnum(cursor.getString(cursor.getColumnIndex("Get_info")));
+            finishBean.setidentity(cursor.getString(cursor.getColumnIndex("Sserver")));
+            finishBean.setDnum(cursor.getString(cursor.getColumnIndex("Sway")));
+            finishBean.setHname(cursor.getString(cursor.getColumnIndex("num")));
 
 
 //            Log.e("tag", userBean.getGnum() + "|" + userBean.getGname() + "|" + userBean.getGgender() + "|" + userBean.getGphone() + "|" + userBean.getGaddress());
