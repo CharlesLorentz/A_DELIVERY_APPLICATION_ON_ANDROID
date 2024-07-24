@@ -1,5 +1,9 @@
 package com.example.expressage;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class customer_send extends AppCompatActivity {
     customer_send_Dao customer_send_dao;
-
+//    SQLiteHelper sqLiteHelper;
+    String num;
     String Sname;
     String Sphone;
     String Sadress;
@@ -23,8 +28,10 @@ public class customer_send extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_send);
-
+        Intent intent=getIntent();
+        num=intent.getStringExtra("num");
         customer_send_dao = new customer_send_Dao(this);
+
         ImageButton back = findViewById(R.id.btn_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +76,7 @@ public class customer_send extends AppCompatActivity {
 //            Sway=send_here_text;
 //        }
         btn_save.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("Range")
             @Override
             public void onClick(View v) {
                 Sname=get_name.getText().toString();
@@ -89,8 +97,7 @@ public class customer_send extends AppCompatActivity {
 //                    Sway=send_here_text;
 //                }
 
-
-                boolean result= customer_send_dao.insertUser(Sname,Sphone,Sadress,Hname,Cname);
+                boolean result= customer_send_dao.insertUser(num,"customer",Sname,Sphone,Sadress,Hname,Cname);
                 if(result){
                     Toast.makeText(customer_send.this, "完成:>", Toast.LENGTH_SHORT).show();
                     finish();

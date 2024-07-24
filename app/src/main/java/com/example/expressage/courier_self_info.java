@@ -39,8 +39,8 @@ public class courier_self_info extends AppCompatActivity {
         TextView Address=findViewById(R.id.address);
 
         SQLiteDatabase sdb=sqLiteHelper.getReadableDatabase();
-        String sql="select * from user ";
-        Cursor cursor=sdb.rawQuery(sql, null);
+        String sql="select * from user where num=?";
+        Cursor cursor=sdb.rawQuery(sql, new String[]{num});
         if(cursor.moveToFirst()==true){
             Number.setText("账号"+"  "+ cursor.getString(cursor.getColumnIndex("num")));
             Password.setText("密码"+"  "+cursor.getString(cursor.getColumnIndex("password")));

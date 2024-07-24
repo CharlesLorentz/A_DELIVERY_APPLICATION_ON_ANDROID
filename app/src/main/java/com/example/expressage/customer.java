@@ -51,6 +51,7 @@ public class customer extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(customer.this, customer_send.class);
+                intent.putExtra("num",num);
                 startActivity(intent);
             }
         });

@@ -15,9 +15,11 @@ public class customer_send_Dao {
         //获取sqLiteDatabase对象
         sqLiteDatabase = sqLiteHelper.getWritableDatabase();
     }
-    public boolean insertUser( String Sname, String Sphone, String Sadress, String Hname, String Cname){
+    public boolean insertUser(String num,String identity,String Sname, String Sphone, String Sadress, String Hname, String Cname){
         ContentValues values = new ContentValues();
 
+        values.put("num",num);
+        values.put("identity",identity);
         values.put("Sname",Sname);
         values.put("Sphone",Sphone);
         values.put("Sadress",Sadress);

@@ -84,21 +84,21 @@ public class incomplete  extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Send_info=send_info.getText().toString();
-                Get_info=get_info.getText().toString();
-                Name=name.getText().toString();
-                Phone=phone.getText().toString();
-                State=finish_text;
-
-
-                boolean result= courier_finish_dao.insertUser(Send_info,Get_info,Name,Phone,State);
-                if(result){
-                    Toast.makeText(incomplete.this, "完成:>", Toast.LENGTH_SHORT).show();
-                    finish();
-                }
-                else{
-                    Toast.makeText(incomplete.this, "失败...", Toast.LENGTH_SHORT).show();
-                }
+//                Send_info=send_info.getText().toString();
+//                Get_info=get_info.getText().toString();
+//                Name=name.getText().toString();
+//                Phone=phone.getText().toString();
+//                State=finish_text;
+//
+//
+//                boolean result= courier_finish_dao.insertUser(Send_info,Get_info,Name,Phone,State);
+//                if(result){
+//                    Toast.makeText(incomplete.this, "完成:>", Toast.LENGTH_SHORT).show();
+//                    finish();
+//                }
+//                else{
+//                    Toast.makeText(incomplete.this, "失败...", Toast.LENGTH_SHORT).show();
+//                }
 
             }
         });

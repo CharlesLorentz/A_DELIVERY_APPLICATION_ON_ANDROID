@@ -2,55 +2,55 @@ package com.example.expressage;
 
 public class courier_finish_Bean {
 
-    private String Send_info;
-    private String Get_info;
-    private String name;
-    private String phone;
-    private String state;
-    public courier_finish_Bean(String Send_info, String Get_info, String name,String phone,String state ){
+    private String Fnum;
+    private String num;
+    private String identity;
+    private String Dnum;
+    private String Hname;
+    public courier_finish_Bean(String Fnum, String num, String identity,String Dnum,String Hname ){
         super();
 
-        this.Send_info=Send_info;
-        this.Get_info=Get_info;
-        this.name=name;
-        this.phone=phone;
-        this.state=state;
+        this.Fnum=Fnum;
+        this.num=num;
+        this.identity=identity;
+        this.Dnum=Dnum;
+        this.Hname=Hname;
 
     }
 
-    public  String getSend_info(){
-        return Send_info;
+    public  String getFnum(){
+        return Fnum;
     }
-    public void setSend_info(String Send_info){this.Send_info=Send_info;}
-    public String getGet_info() {
-        return Get_info;
-    }
-
-    public void setGet_info(String Get_info) {
-        this.Get_info = Get_info;
+    public void setFnum(String Fnum){this.Fnum=Fnum;}
+    public String getnum() {
+        return num;
     }
 
-    public String getname() {
-        return name;
+    public void setnum(String num) {
+        this.num = num;
     }
 
-    public void setname(String name) {
-        this.name = name;
+    public String getidentity() {
+        return identity;
     }
 
-    public String getphone() {
-        return phone;
+    public void setidentity(String identity) {
+        this.identity = identity;
     }
 
-    public void setphone(String phone) {
-        this.phone = phone;
-    }
-    public String getstate() {
-        return state;
+    public String getDnum() {
+        return Dnum;
     }
 
-    public void setstate(String state) {
-        this.state = state;
+    public void setDnum(String Dnum) {
+        this.Dnum = Dnum;
+    }
+    public String getHname() {
+        return Hname;
+    }
+
+    public void setHname(String Hname) {
+        this.Hname = Hname;
     }
     @Override
     public String toString() {
