@@ -20,36 +20,57 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/back" />
 
-    <EditText
-        android:id="@+id/parcel_info"
+    <TextView
+        android:id="@+id/del_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:text="快递任务"
+        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/deliver_info"
         android:layout_width="350dp"
         android:layout_height="200dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="100dp"
-        android:text="TextView" />
+        android:text="当前没有快递任务" />
 
-    <Button
-        android:id="@+id/button2"
+
+    <TextView
+        android:id="@+id/send_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="600dp"
-        android:text="任务" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="360dp"
+        android:text="派送任务"
+        android:textSize="24sp" />
 
-    <Button
+    <TextView
+        android:id="@+id/send_info"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="400dp"
+        android:text="当前没有派送任务" />
+
+    <ImageButton
         android:id="@+id/self_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="600dp"
-        android:text="我的" />
+        android:layout_width="46dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="375dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/user2" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="20dp"
-        android:text="物流快递单" />
+        android:text="物流快递单"
+        android:textSize="24sp" />
+
+
 
 </RelativeLayout>
