@@ -3,6 +3,7 @@ package com.example.expressage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +33,18 @@ public class company extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(company.this, self_info.class);
+                intent.putExtra("num",num);
+                intent.putExtra("identity","company");
+                startActivity(intent);
+            }
+        });
+
+        Button btn_add=findViewById(R.id.btn_add);
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(company.this, company_add.class);
                 intent.putExtra("num",num);
                 intent.putExtra("identity","company");
                 startActivity(intent);

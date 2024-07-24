@@ -16,14 +16,14 @@ public class courier_finish_Dao {
         sqLiteDatabase = sqLiteHelper.getWritableDatabase();
     }
 
-    public boolean insertUser( String Send_info, String Get_info, String name, String phone, String state){
+    public boolean insertUser(String num,String identity,String com_num,String com_identity,String Hname){
         ContentValues values = new ContentValues();
 
-        values.put("Send_info",Send_info);
-        values.put("Get_info",Get_info);
-        values.put("name",name);
-        values.put("phone",phone);
-        values.put("state",state);
+        values.put("num",num);
+        values.put("identity",identity);
+        values.put("com_num",com_num);
+        values.put("com_identity",com_identity);
+        values.put("Hname",Hname);
 
 
         //第一个是表名，第二个null，第三个是相当于sql插入语句的values
@@ -32,24 +32,5 @@ public class courier_finish_Dao {
 
         return id>0?true:false;
     }
-    @SuppressLint("Range")
-    public courier_finish_Bean querryUser(String Gnum, String Send_info, String Get_info, String name, String phone, String state){
 
-        Cursor cursor = sqLiteDatabase.query("finish",new String[]{"Send_info","Get_info","name","phone","state"},"  Send_info=? and Get_info=? and name=?and phone=?and state=?",new String[]{Gnum,Send_info,Get_info,name,phone,state},null,null,null);
-
-        courier_finish_Bean finishBean = new courier_finish_Bean(Send_info,Get_info,name,phone,state);
-        while (cursor.moveToNext()){
-            finishBean.setSend_info(cursor.getString(cursor.getColumnIndex("Send_info")));
-            finishBean.setGet_info(cursor.getString(cursor.getColumnIndex("Get_info")));
-            finishBean.setname(cursor.getString(cursor.getColumnIndex("Sserver")));
-            finishBean.setphone(cursor.getString(cursor.getColumnIndex("Sway")));
-            finishBean.setstate(cursor.getString(cursor.getColumnIndex("num")));
-
-
-//            Log.e("tag", userBean.getGnum() + "|" + userBean.getGname() + "|" + userBean.getGgender() + "|" + userBean.getGphone() + "|" + userBean.getGaddress());
-
-        }
-        cursor.close();
-        return finishBean;
-    }
 }

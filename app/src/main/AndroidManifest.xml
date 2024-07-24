@@ -168,7 +168,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".customer_send_Dao"
+            android:name=".company_add"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -177,7 +177,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".courier_finish_Bean"
+            android:name=".customer_send_Dao"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

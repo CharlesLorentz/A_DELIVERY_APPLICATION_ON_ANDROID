@@ -5,37 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView6"
+
+    <Button
+        android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dp"
-        android:layout_marginTop="50dp"
-        android:text="未分配"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="57dp" />
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="250dp"
+        android:text="添加派送单" />
 
-    <TextView
-        android:id="@+id/textView15"
+    <Button
+        android:id="@+id/btn_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="50dp"
-        android:text="已分配"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="242dp"
-        tools:layout_editor_absoluteY="57dp" />
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="250dp"
+        android:text="确认快递单" />
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="286dp"
-        android:layout_height="135dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="200dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="141dp" />
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="50dp"
