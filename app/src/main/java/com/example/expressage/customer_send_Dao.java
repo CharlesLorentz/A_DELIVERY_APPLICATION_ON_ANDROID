@@ -15,13 +15,14 @@ public class customer_send_Dao {
         //获取sqLiteDatabase对象
         sqLiteDatabase = sqLiteHelper.getWritableDatabase();
     }
-    public boolean insertUser( String Send_info, String Get_info, String Sserver, String Sway){
+    public boolean insertUser( String Sname, String Sphone, String Sadress, String Hname, String Cname){
         ContentValues values = new ContentValues();
 
-        values.put("Send_info",Send_info);
-        values.put("Get_info",Get_info);
-        values.put("Sserver",Sserver);
-        values.put("Sway",Sway);
+        values.put("Sname",Sname);
+        values.put("Sphone",Sphone);
+        values.put("Sadress",Sadress);
+        values.put("Hname",Hname);
+        values.put("Cname",Cname);
 
 
         //第一个是表名，第二个null，第三个是相当于sql插入语句的values
@@ -31,25 +32,25 @@ public class customer_send_Dao {
         return id>0?true:false;
     }
     @SuppressLint("Range")
-    public customer_send_Bean querryUser(String Gnum, String Send_info, String Get_info, String Sserver, String Sway){
-
-        Cursor cursor = sqLiteDatabase.query("send",new String[]{"num","Send_info","Get_info","Sserver","Sway"},"num=? and Send_info=? and Get_info=? and Sserver=?and Sway=?",new String[]{Gnum,Send_info,Get_info,Sserver,Sway},null,null,null);
-
-        customer_send_Bean sendBean = new customer_send_Bean(Send_info,Get_info,Sserver,Sway);
-        while (cursor.moveToNext()){
-            sendBean.setGnum(cursor.getString(cursor.getColumnIndex("num")));
-            sendBean.setSend_info(cursor.getString(cursor.getColumnIndex("Send_info")));
-            sendBean.setGet_info(cursor.getString(cursor.getColumnIndex("Get_info")));
-            sendBean.setSserver(cursor.getString(cursor.getColumnIndex("Sserver")));
-            sendBean.setSway(cursor.getString(cursor.getColumnIndex("Sway")));
-
-
-//            Log.e("tag", userBean.getGnum() + "|" + userBean.getGname() + "|" + userBean.getGgender() + "|" + userBean.getGphone() + "|" + userBean.getGaddress());
-
-        }
-        cursor.close();
-        return sendBean;
-    }
+//    public customer_send_Bean querryUser(String Gnum, String Send_info, String Get_info, String Sserver, String Sway){
+//
+//        Cursor cursor = sqLiteDatabase.query("send",new String[]{"num","Send_info","Get_info","Sserver","Sway"},"num=? and Send_info=? and Get_info=? and Sserver=?and Sway=?",new String[]{Gnum,Send_info,Get_info,Sserver,Sway},null,null,null);
+//
+//        customer_send_Bean sendBean = new customer_send_Bean(Gnum,Get_info,Sserver,Sway);
+//        while (cursor.moveToNext()){
+//            sendBean.setGnum(cursor.getString(cursor.getColumnIndex("num")));
+//            sendBean.setSend_info(cursor.getString(cursor.getColumnIndex("Send_info")));
+//            sendBean.setGet_info(cursor.getString(cursor.getColumnIndex("Get_info")));
+//            sendBean.setSserver(cursor.getString(cursor.getColumnIndex("Sserver")));
+//            sendBean.setSway(cursor.getString(cursor.getColumnIndex("Sway")));
+//
+//
+////            Log.e("tag", userBean.getGnum() + "|" + userBean.getGname() + "|" + userBean.getGgender() + "|" + userBean.getGphone() + "|" + userBean.getGaddress());
+//
+//        }
+//        cursor.close();
+//        return sendBean;
+//    }
     public boolean updateUser(String longitude, String latitude, String country, String province, String city, String county, String street, String hnumber, String bump){
 
 //        ContentValues values = new ContentValues();

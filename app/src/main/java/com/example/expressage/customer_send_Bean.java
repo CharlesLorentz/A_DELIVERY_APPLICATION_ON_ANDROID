@@ -1,53 +1,82 @@
 package com.example.expressage;
 
 public class customer_send_Bean {
+    private String NDNum;
     private String num;
-    private String Send_info;
-    private String Get_info;
-    private String Sserver;
-    private String Sway;
-    public customer_send_Bean(String Send_info, String Get_info, String Sserver,String Sway ){
+    private String identity;
+    private String Sname;
+    private String Sphone;
+    private String Sadress;
+    private String Hname;
+    private String Cname;
+    public customer_send_Bean(String NDNum, String num, String identity,String Sname,String Sphone,String Sadress,String Hname,String Cname ){
         super();
 
-        this.Send_info=Send_info;
-        this.Get_info=Get_info;
-        this.Sserver=Sserver;
-        this.Sway=Sway;
+        this.NDNum=NDNum;
+        this.num=num;
+        this.identity=identity;
+        this.Sname=Sname;
+        this.Sphone=Sphone;
+        this.Sadress=Sadress;
+        this.Hname=Hname;
+        this.Cname=Cname;
 
     }
-    public  String getGnum(){
+    public  String getNDNum(){
+        return NDNum;
+    }
+    public void setNDNum(String NDNum){
+        this.NDNum=NDNum;
+    }
+    public  String getnum(){
         return num;
     }
-    public void setGnum(String num){
-        this.num=num;
-    }
-    public  String getSend_info(){
-        return Send_info;
-    }
-    public void setSend_info(String Send_info){this.Send_info=Send_info;}
-    public String getGet_info() {
-        return Get_info;
+    public void setnum(String num){this.num=num;}
+    public String getidentity() {
+        return identity;
     }
 
-    public void setGet_info(String Get_info) {
-        this.Get_info = Get_info;
+    public void setidentity(String identity) {
+        this.identity = identity;
     }
 
-    public String getSserver() {
-        return Sserver;
+    public String getSname() {
+        return Sname;
     }
 
-    public void setSserver(String Sserver) {
-        this.Sserver = Sserver;
+    public void setSname(String Sname) {
+        this.Sname = Sname;
     }
 
-    public String getSway() {
-        return Sway;
+    public String getSphone() {
+        return Sphone;
     }
 
-    public void setSway(String Sway) {
-        this.Sway = Sway;
+    public void setSphone(String Sphone) {
+        this.Sphone = Sphone;
     }
+    public String getSadress() {
+        return Sadress;
+    }
+
+    public void setSadress(String Sadress) {
+        this.Sadress = Sadress;
+    }
+    public String getHname() {
+        return Hname;
+    }
+
+    public void setHname(String Hname) {
+        this.Hname = Hname;
+    }
+    public String getCname() {
+        return Cname;
+    }
+
+    public void setCname(String Cname) {
+        this.Cname = Cname;
+    }
+
     @Override
     public String toString() {
         return "";
