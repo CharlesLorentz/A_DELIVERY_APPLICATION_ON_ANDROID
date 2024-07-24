@@ -49,6 +49,7 @@ public class customer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent();
+                intent.putExtra("num",num);
                 intent.setClass(customer.this, customer_send.class);
                 startActivity(intent);
             }

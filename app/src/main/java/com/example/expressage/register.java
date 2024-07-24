@@ -47,8 +47,6 @@ public class register extends AppCompatActivity {
             }
         });
 
-
-
         Button btn_save=findViewById(R.id.btn_save);
         EditText password_edit = findViewById(R.id.Gpassword_content);
         EditText confirm_edit = findViewById(R.id.confirm_content);
