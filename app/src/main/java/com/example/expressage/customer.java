@@ -3,9 +3,7 @@ package com.example.expressage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,8 +38,9 @@ public class customer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent();
-                intent.setClass(customer.this, customer_self_info.class);
+                intent.setClass(customer.this, self_info.class);
                 intent.putExtra("num",num);
+                intent.putExtra("identity","customer");
                 startActivity(intent);
             }
         });
@@ -60,6 +59,7 @@ public class customer extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(customer.this, search.class);
+
                 startActivity(intent);
             }
         });

@@ -9,3 +9,4 @@ And we test our project on Pixel 3a API 34 which is a virtual device that you ca
 
 ## There're some problems you may come across when you try to run the project.
 * use database: the data in the database is stored in you device. It is not disposable and there's the code to delete the database in MainActivity.java
+* environment configuration: if the project cannot run right now but it could run before. pls try to change the configuration in gradle.properties to test whether it can run and revert.

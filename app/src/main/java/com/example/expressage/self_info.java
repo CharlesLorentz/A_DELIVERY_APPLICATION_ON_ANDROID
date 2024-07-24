@@ -13,8 +13,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
-public class customer_self_info extends AppCompatActivity {
+public class self_info extends AppCompatActivity {
     String num;
+    String identity;
     SQLiteHelper sqLiteHelper;
     customerDao customerDao;
 
@@ -25,10 +26,11 @@ public class customer_self_info extends AppCompatActivity {
         Intent intent=getIntent();
         customerDao = new customerDao(this);
         num=intent.getStringExtra("num");
+        identity=intent.getStringExtra("identity");
 //        Toast.makeText(this, num, Toast.LENGTH_SHORT).show();
         sqLiteHelper=new SQLiteHelper(this);
 
-        setContentView(R.layout.customer_self_info);
+        setContentView(R.layout.self_info);
         ImageButton back = findViewById(R.id.btn_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +47,8 @@ public class customer_self_info extends AppCompatActivity {
         TextView Address=findViewById(R.id.address);
 
         SQLiteDatabase sdb=sqLiteHelper.getReadableDatabase();
-        String sql="select * from user where num=?";
-        Cursor cursor=sdb.rawQuery(sql, new String[]{num});
+        String sql="select * from user where num=? and identity=?";
+        Cursor cursor=sdb.rawQuery(sql, new String[]{num,identity});
         if(cursor.moveToFirst()==true){
             Number.setText("账号"+"  "+ cursor.getString(cursor.getColumnIndex("num")));
             Password.setText("密码"+"  "+cursor.getString(cursor.getColumnIndex("password")));
@@ -70,7 +72,7 @@ public class customer_self_info extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent();
-                intent.setClass(customer_self_info.this, customer_change.class);
+                intent.setClass(self_info.this, change_info.class);
                 intent.putExtra("num",num);
                 startActivity(intent);
             }
@@ -80,7 +82,7 @@ public class customer_self_info extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                AlertDialog.Builder dialog=new AlertDialog.Builder(customer_self_info.this);
+                AlertDialog.Builder dialog=new AlertDialog.Builder(self_info.this);
 //设置对话框
                 dialog.setTitle("注销账户");
                 dialog.setMessage("确认注销请点击确定");
@@ -93,9 +95,9 @@ public class customer_self_info extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Boolean confirm= customerDao.deleteUser(num);
                         if(confirm){
-                            Toast.makeText(customer_self_info.this, "注销成功", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(self_info.this, "注销成功", Toast.LENGTH_SHORT).show();
                             Intent intent=new Intent();
-                            intent.setClass(customer_self_info.this,MainActivity.class);
+                            intent.setClass(self_info.this,MainActivity.class);
                             startActivity(intent);
 
                         }
@@ -105,7 +107,7 @@ public class customer_self_info extends AppCompatActivity {
                 dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(customer_self_info.this, "谢谢您的回心转意", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(self_info.this, "谢谢您的回心转意", Toast.LENGTH_SHORT).show();
                     }
                 });
 //显示对话框
