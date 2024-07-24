@@ -6,9 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -16,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class customer_send extends AppCompatActivity {
     customer_send_Dao customer_send_dao;
-    //    SQLiteHelper sqLiteHelper;
+    SQLiteHelper sqLiteHelper;
     String num;
     String Sname;
     String Sphone;
@@ -24,6 +27,7 @@ public class customer_send extends AppCompatActivity {
     String Hname;
     String Cname;
 
+    @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +35,7 @@ public class customer_send extends AppCompatActivity {
 
         Intent intent=getIntent();
         num=intent.getStringExtra("num");
-
+        sqLiteHelper=new SQLiteHelper(this);
         customer_send_dao = new customer_send_Dao(this);
 
         ImageButton back = findViewById(R.id.btn_back);
@@ -46,7 +50,7 @@ public class customer_send extends AppCompatActivity {
         EditText get_phone = findViewById(R.id.get_phone);
         EditText get_adress = findViewById(R.id.get_adress);
         EditText get_goods = findViewById(R.id.goods);
-        EditText get_company = findViewById(R.id.company);
+
 
 
         get_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -81,14 +85,44 @@ public class customer_send extends AppCompatActivity {
                 }
             }
         });
-        get_company.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        SQLiteDatabase sdb=sqLiteHelper.getReadableDatabase();
+        String sql="select * from user where identity=?";
+        Cursor cursor=sdb.rawQuery(sql, new String[]{"company"});
+        String[] data={"","","",""};
+        if(cursor.moveToFirst()){
+//        while(cursor.moveToNext()){
+//            for(int i=0;i<4;i++){
+                data[0]=cursor.getString(cursor.getColumnIndex("num")).toString();
+               if( cursor.moveToNext())
+                data[1]=cursor.getString(cursor.getColumnIndex("num")).toString();
+               if( cursor.moveToNext())
+                 data[2]=cursor.getString(cursor.getColumnIndex("num")).toString();
+                if(cursor.moveToNext())
+                data[3]=cursor.getString(cursor.getColumnIndex("num")).toString();
+
+
+//                cursor.getColumnIndex("Cname");
+//            }
+//        }
+        }
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,data);
+        adapter.setDropDownViewResource( android.R.layout.simple_spinner_item);
+        Spinner spinner=findViewById(R.id.spinner);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
-                    get_company.setText("");
-                }
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Cname= data[position];
+
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
         });
+//        spinner.performClick();
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("Range")
@@ -98,7 +132,6 @@ public class customer_send extends AppCompatActivity {
                 Sphone=get_phone.getText().toString();
                 Sadress=get_adress.getText().toString();
                 Hname=get_goods.getText().toString();
-                Cname=get_company.getText().toString();
 //                if (send_self_check){
 //                    Sserver=send_self_text;
 //                }
