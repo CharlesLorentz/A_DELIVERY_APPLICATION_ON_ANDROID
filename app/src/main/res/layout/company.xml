@@ -42,4 +42,13 @@
         android:layout_height="50dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/back" />
+
+    <ImageButton
+        android:id="@+id/btn_self_info"
+        android:layout_width="46dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="375dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/user2" />
+
 </RelativeLayout>

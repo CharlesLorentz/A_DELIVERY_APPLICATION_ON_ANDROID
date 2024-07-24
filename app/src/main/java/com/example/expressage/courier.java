@@ -13,14 +13,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class courier extends AppCompatActivity {
-    String Self_info;
+    String num;
     SQLiteHelper sqLiteHelper;
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent =getIntent();
-        Self_info = intent.getStringExtra("Self_info");
+        num = intent.getStringExtra("num");
 
         sqLiteHelper = new SQLiteHelper(this);
 
@@ -38,7 +38,9 @@ public class courier extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent();
-                intent.setClass(courier.this, courier_self_info.class);
+                intent.setClass(courier.this, self_info.class);
+                intent.putExtra("num",num);
+                intent.putExtra("identity","courier");
                 startActivity(intent);
             }
         });

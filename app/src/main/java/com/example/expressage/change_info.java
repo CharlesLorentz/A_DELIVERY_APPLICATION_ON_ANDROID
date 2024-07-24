@@ -10,13 +10,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class customer_change extends AppCompatActivity {
+public class change_info extends AppCompatActivity {
     String num;
     customerDao customerDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.customer_change);
+        setContentView(R.layout.change_info);
         customerDao = new customerDao(this);
         Intent intent=getIntent();
         num = intent.getStringExtra("num");
@@ -40,10 +40,10 @@ public class customer_change extends AppCompatActivity {
             public void onClick(View v) {
                 Boolean judge= customerDao.updateUser(num,c_name.getText().toString(),c_password.getText().toString(),c_gender.getText().toString(),c_phone.getText().toString(),c_address.getText().toString());
                 if(judge){
-                    Toast.makeText(customer_change.this, " 修改成功:>", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(change_info.this, " 修改成功:>", Toast.LENGTH_SHORT).show();
                     finish();
                 }else{
-                    Toast.makeText(customer_change.this, "修改失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(change_info.this, "修改失败", Toast.LENGTH_SHORT).show();
                 }
 
             }
