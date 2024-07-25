@@ -16,7 +16,7 @@ public class courier_finish_Dao {
         sqLiteDatabase = sqLiteHelper.getWritableDatabase();
     }
 
-    public boolean insertUser(String num,String identity,String com_num,String com_identity,String Hname){
+    public boolean insertUser(String num,String identity,String com_num,String com_identity,String Hname,String state){
         ContentValues values = new ContentValues();
 
         values.put("num",num);
@@ -24,6 +24,7 @@ public class courier_finish_Dao {
         values.put("com_num",com_num);
         values.put("com_identity",com_identity);
         values.put("Hname",Hname);
+        values.put("state",state);
 
 
         //第一个是表名，第二个null，第三个是相当于sql插入语句的values

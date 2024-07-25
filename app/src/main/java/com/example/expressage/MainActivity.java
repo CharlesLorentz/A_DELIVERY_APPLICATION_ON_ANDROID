@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity{
 
         Button btn_login=findViewById(R.id.btn_login);
         EditText account_edit=findViewById(R.id.editTextTextPassword);
+        account_edit.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
         EditText password_edit=findViewById(R.id.editTextTextPassword2);
 
 

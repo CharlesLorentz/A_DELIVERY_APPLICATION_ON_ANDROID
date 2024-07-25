@@ -26,7 +26,7 @@ public class customer_send extends AppCompatActivity {
     String Sadress;
     String Hname;
     String Cname;
-
+    String State;
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class customer_send extends AppCompatActivity {
                 finish();
             }
         });
+
         Button btn_save=findViewById(R.id.save);
         EditText get_name = findViewById(R.id.get_name);
         EditText get_phone = findViewById(R.id.get_phone);
@@ -85,7 +86,8 @@ public class customer_send extends AppCompatActivity {
                 }
             }
         });
-        SQLiteDatabase sdb=sqLiteHelper.getReadableDatabase();
+
+       SQLiteDatabase sdb=sqLiteHelper.getReadableDatabase();
         String sql="select * from user where identity=?";
         Cursor cursor=sdb.rawQuery(sql, new String[]{"company"});
         String[] data={"","","",""};
@@ -105,6 +107,7 @@ public class customer_send extends AppCompatActivity {
 //            }
 //        }
         }
+
         ArrayAdapter<String> adapter=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,data);
         adapter.setDropDownViewResource( android.R.layout.simple_spinner_item);
         Spinner spinner=findViewById(R.id.spinner);
@@ -132,6 +135,7 @@ public class customer_send extends AppCompatActivity {
                 Sphone=get_phone.getText().toString();
                 Sadress=get_adress.getText().toString();
                 Hname=get_goods.getText().toString();
+
 //                if (send_self_check){
 //                    Sserver=send_self_text;
 //                }
@@ -145,7 +149,7 @@ public class customer_send extends AppCompatActivity {
 //                    Sway=send_here_text;
 //                }
 
-                boolean result= customer_send_dao.insertUser(num,"customer",Sname,Sphone,Sadress,Hname,Cname);
+                boolean result= customer_send_dao.insertUser(num,"customer",Sname,Sphone,Sadress,Hname,Cname,"正在寄出");
                 if(result){
                     Toast.makeText(customer_send.this, "完成:>", Toast.LENGTH_SHORT).show();
                     finish();

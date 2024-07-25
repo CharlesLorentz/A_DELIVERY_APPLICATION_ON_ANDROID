@@ -59,11 +59,13 @@ public class courier extends AppCompatActivity {
             String Sadress = cursor.getString(cursor.getColumnIndex("Sadress"));
             String Hname = cursor.getString(cursor.getColumnIndex("Hname"));
             String Cname = cursor.getString(cursor.getColumnIndex("Cname"));
+            String state = cursor.getString(cursor.getColumnIndex("state"));
             del_sb.append("收件人姓名: ").append(Get_name).append("\n")
                     .append("收件人电话: ").append(Get_phone).append("\n")
                     .append("收件人地址: ").append(Sadress).append("\n")
                     .append("货物名称: ").append(Hname).append("\n")
-                    .append("物流公司").append(Cname).append("\n") ;
+                    .append("物流公司").append(Cname).append("\n")
+                    .append("状态: ").append(state).append("\n");
 
             deliver_info.setText(del_sb.toString());
         }
@@ -108,5 +110,6 @@ public class courier extends AppCompatActivity {
 
             send_info.setText(send_sb.toString());
         }
+
     }
 }

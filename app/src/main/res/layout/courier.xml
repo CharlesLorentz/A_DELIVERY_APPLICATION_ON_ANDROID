@@ -13,6 +13,14 @@
     <!--        tools:layout_editor_absoluteX="0dp"-->
     <!--        tools:layout_editor_absoluteY="0dp" />-->
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="600dp"
+        android:text="已送达" />
+
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="55dp"
@@ -71,6 +79,13 @@
         android:text="物流快递单"
         android:textSize="24sp" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="300dp"
+        android:text="已送达" />
 
 
 </RelativeLayout>

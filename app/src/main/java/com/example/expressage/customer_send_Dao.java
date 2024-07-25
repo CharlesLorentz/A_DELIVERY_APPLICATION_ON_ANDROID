@@ -15,7 +15,7 @@ public class customer_send_Dao {
         //获取sqLiteDatabase对象
         sqLiteDatabase = sqLiteHelper.getWritableDatabase();
     }
-    public boolean insertUser(String num,String identity,String Sname, String Sphone, String Sadress, String Hname, String Cname){
+    public boolean insertUser(String num,String identity,String Sname, String Sphone, String Sadress, String Hname, String Cname,String state){
         ContentValues values = new ContentValues();
 
         values.put("num",num);
@@ -25,6 +25,7 @@ public class customer_send_Dao {
         values.put("Sadress",Sadress);
         values.put("Hname",Hname);
         values.put("Cname",Cname);
+        values.put("state",state);
 
 
         //第一个是表名，第二个null，第三个是相当于sql插入语句的values

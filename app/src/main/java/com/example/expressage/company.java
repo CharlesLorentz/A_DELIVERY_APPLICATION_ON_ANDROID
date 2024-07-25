@@ -91,7 +91,7 @@ public class company extends AppCompatActivity {
                 }
 
 
-                boolean result= courier_finish_dao.insertUser(customer_num,"customer",my_num,"company",goods);
+                boolean result= courier_finish_dao.insertUser(customer_num,"customer",my_num,"company",goods,"正在派送");
                 if(result){
                     Toast.makeText(company.this, "完成:>", Toast.LENGTH_SHORT).show();
                     finish();

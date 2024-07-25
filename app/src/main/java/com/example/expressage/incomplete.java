@@ -91,7 +91,7 @@ public class incomplete  extends AppCompatActivity {
                 State=finish_text;
 
 
-                boolean result= courier_finish_dao.insertUser(Send_info,Get_info,Name,Phone,State);
+                boolean result= courier_finish_dao.insertUser(Send_info,"customer",Get_info,"company",Name,"正在派送");
                 if(result){
                     Toast.makeText(incomplete.this, "完成:>", Toast.LENGTH_SHORT).show();
                     finish();
