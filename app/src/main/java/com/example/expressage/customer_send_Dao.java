@@ -54,12 +54,14 @@ public class customer_send_Dao {
 //        cursor.close();
 //        return sendBean;
 //    }
-    public boolean updateUser(String longitude, String latitude, String country, String province, String city, String county, String street, String hnumber, String bump){
-
-//        ContentValues values = new ContentValues();
-//        values.put("password",newpassword);
-//        long id = sqLiteDatabase.update("user",values,"username = ? ",new String[]{username});
-//        flag = id > 0?true : false;
+    public boolean updateUser(String num,String identity){
+        Boolean flag;
+        ContentValues values = new ContentValues();
+        values.put("num",num);
+        values.put("identity",identity);
+        values.put("state","已送达");
+        long id = sqLiteDatabase.update("send",values,"num = ? ",new String[]{num});
+        flag = id > 0?true : false;
         return true;
     }
     public boolean deleteUser(){

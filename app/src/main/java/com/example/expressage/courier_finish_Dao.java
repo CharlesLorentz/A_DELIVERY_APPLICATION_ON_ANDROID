@@ -33,5 +33,13 @@ public class courier_finish_Dao {
 
         return id>0?true:false;
     }
+    public boolean updateUser(String num,String identity){
+        Boolean flag;
+        ContentValues values = new ContentValues();
 
+        values.put("state","已派送");
+        long id = sqLiteDatabase.update("finish",values,"num = ? and identity= ?",new String[]{num,identity});
+        flag = id > 0?true : false;
+        return true;
+    }
 }

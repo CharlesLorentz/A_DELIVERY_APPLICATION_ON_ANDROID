@@ -92,7 +92,7 @@ import android.database.sqlite.SQLiteDatabase;
         values.put("address",address);
         long id = sqLiteDatabase.update("user",values,"num = ? ",new String[]{num});
         flag = id > 0?true : false;
-        return true;
+        return flag;
     }
 
 
