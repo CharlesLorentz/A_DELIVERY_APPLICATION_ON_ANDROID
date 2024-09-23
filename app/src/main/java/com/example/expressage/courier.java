@@ -178,5 +178,16 @@ public class courier extends AppCompatActivity {
             }
         });
 
+        ImageButton comment_watch = findViewById(R.id.comment);
+        comment_watch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(courier.this, courier_watch.class);
+
+                startActivity(intent);
+            }
+        });
+
     }
 }
