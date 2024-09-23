@@ -45,6 +45,40 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/user2" />
 
+    <ImageButton
+        android:id="@+id/comment"
+        android:layout_width="140dp"
+        android:layout_height="131dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/comment"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="300dp"/>
+
+    <ImageButton
+        android:id="@+id/write_comment"
+        android:layout_width="140dp"
+        android:layout_height="131dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/write_comment"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="300dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="写评论"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="430dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看历史评论"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="430dp"/>
+
 
     <!--    <Button-->
     <!--        android:id="@+id/btn_create"-->

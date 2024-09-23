@@ -102,5 +102,13 @@
         android:layout_marginTop="600dp"
         android:text="显示" />
 
+    <ImageButton
+        android:id="@+id/comment"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/comment"
+        android:layout_marginLeft="300dp"/>
+
 
 </RelativeLayout>
