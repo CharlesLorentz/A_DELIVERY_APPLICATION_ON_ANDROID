@@ -64,6 +64,26 @@ public class customer extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ImageButton comment_watch = findViewById(R.id.comment);
+        comment_watch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(customer.this, customer_watch.class);
+
+                startActivity(intent);
+            }
+        });
+        ImageButton comment_edit = findViewById(R.id.write_comment);
+        comment_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(customer.this, customer_edit.class);
+
+                startActivity(intent);
+            }
+        });
 
     }
 }
