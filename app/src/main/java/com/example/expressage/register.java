@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class register extends AppCompatActivity {
     customerDao customerDao;
+
     String num;
     String password;
     String name;
