@@ -18,47 +18,16 @@
         android:layout_height="600dp"
         android:fillViewport="true">
         <LinearLayout
+            android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="4dp">
 
 
-            <EditText
-                android:id="@+id/editTextName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minLines="3"
-                android:text="评论1" />
-            <EditText
-                android:id="@+id/editTextPasword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minLines="3"
-                android:text="评论2" />
-            <EditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minLines="3"
-                android:text="评论3" />
-            <EditText
-                android:id="@+id/editTextSchool"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minLines="3"
-                android:text="评论4" />
-            <EditText
-                android:id="@+id/editTexAge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minLines="3"
-                android:text="评论5" />
-            <!--            <Button-->
-            <!--                android:id="@+id/button"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:text="注册" />-->
+
+
+
         </LinearLayout>
     </ScrollView>
 
