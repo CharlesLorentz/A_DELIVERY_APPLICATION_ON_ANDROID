@@ -29,20 +29,21 @@
         android:layout_marginTop="180dp"
         android:text="请评价本次服务" />
 
+
     <EditText
         android:id="@+id/comment"
         android:layout_width="350dp"
         android:layout_height="200dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="400dp"
-        android:text="本次服务是否满足您的要求?说说您的心得,分享给他们." />
+        android:hint="本次服务是否满足您的要求?说说您的心得,分享给他们."/>
 
     <RatingBar
         android:id="@+id/ratingbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="230dp"
         android:isIndicator="false"
         android:numStars="5"
         android:rating="1.0"
@@ -56,7 +57,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="230dp"
         android:text="服务态度" />
 
     <RatingBar
@@ -64,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="290dp"
         android:isIndicator="false"
         android:numStars="5"
         android:rating="1.0"
@@ -78,14 +79,14 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="290dp"
         android:text="沟通及时" />
     <RatingBar
         android:id="@+id/ratingba3r"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="350dp"
         android:isIndicator="false"
         android:numStars="5"
         android:rating="1.0"
@@ -99,7 +100,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="350dp"
         android:text="送货速度" />
 
     <Button
